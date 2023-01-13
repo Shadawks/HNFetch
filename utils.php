@@ -20,7 +20,7 @@ function get_new_stories(): array {
     return json_decode($newStories);
 }
 
-function get_stories_id(string $ranking): array {
+function get_stories_id(string &$ranking): array {
     $tmp = array();
 
     switch ($ranking) {
@@ -87,7 +87,7 @@ function sort_stories(string &$sort, array $stories): void {
     }
 }
 
-function print_stories(array &$stories) {
+function print_stories(array &$stories): void {
     foreach ($stories as $story) {
         $id = htmlspecialchars($story->id);
         $title = htmlspecialchars($story->title);
